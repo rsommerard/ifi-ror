@@ -28,9 +28,7 @@ Ruby on Rails application for IFI course.
   - `rails generate controller welcome index`
   - `rake routes`
   - `rake db:migrate`
-
-
-
+  - `rake test`
 
 # Partie 1: Récupérer les ressources
 
