@@ -1,0 +1,31 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-wrap">
+          <% if @link.errors.any? %>
+            <p><%= pluralize(@link.errors.count, ​"error"​) %> prohibited this link from being saved:​
+              <ul>
+                <% @link.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                  <% end %>
+              </ul>
+            </p>
+          <% end %>
+          <%= form_for @link do |f| %>
+            <div class="form-group">
+              <%= f.label :title, 'Title:', class: 'sr-only' %>
+              <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :url, 'URL:', class: 'sr-only' %>
+              <%= f.text_field :url, class: 'form-control', placeholder: 'URL' %>
+            </div>
+            <%= f.submit "Save", id: 'btn-save', class: 'btn btn-default btn-block' %>
+            <%= link_to 'Back', links_path, class: 'btn btn-default btn-block' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

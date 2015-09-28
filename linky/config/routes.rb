@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  root 'links#index'
+
+  resources :links
+
+  delete 'links/:id', to: 'links#destroy', as: 'delete_link'
+
+  get 'links/:id/increment', to: 'links#increment', as: 'increment_link'
+  get 'links/:id/decrement', to: 'links#decrement', as: 'decrement_link'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
