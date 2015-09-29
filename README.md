@@ -27,11 +27,10 @@ Ruby on Rails application for IFI course.
   - `rake routes`
   - `rake db:migrate`
 
-
-
-
 # Partie 1: Récupérer les ressources
 
   - `git clone http://github.com/rsommerard/ifi-ror.git`
   - `cd ifi-ror/linky`
-  - `rails server`
+  - `rails server
+  - `rails generate scaffold Link title:string url:string score:integer`
+  - `rake db:migrate`
