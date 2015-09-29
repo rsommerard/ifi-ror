@@ -1,7 +1,12 @@
 require 'test_helper'
 
 class LinkTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  fixtures :links
+
+  test "link attributes must not be empty" do
+    link = Link.new
+    assert link.invalid?
+    assert link.errors[:title].any?
+    assert link.errors[:url].any?
+  end
 end

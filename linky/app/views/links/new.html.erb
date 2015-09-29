@@ -5,7 +5,7 @@
         <div class="form-wrap">
           <%= form_for @link do |f| %>
             <% if @link.errors.any? %>
-            <p><%= pluralize(@link.errors.count, ​"error"​)%>prohibited this link from being saved:<ul>
+            <p><%= pluralize(@link.errors.count, "errror") %>prohibited this link from being saved:<ul>
                 <% @link.errors.full_messages.each do |msg| %>
                   <li><%= msg %></li>
                   <% end %>
