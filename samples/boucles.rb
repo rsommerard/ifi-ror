@@ -2,6 +2,10 @@
   puts 'times'
 end
 
+3.times do |v|
+  puts v
+end
+
 puts '-' * 80
 
 [1, 2, 3, 4, 5].each do |element|
