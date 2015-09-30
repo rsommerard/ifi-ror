@@ -1,7 +1,3 @@
-3.times do
-  puts 'times'
-end
-
 3.times do |v|
   puts v
 end
