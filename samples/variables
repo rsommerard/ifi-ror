@@ -1,8 +1,3 @@
 a = "Bonjour"
-a.class
 a = 10
-a.class
-b = 10.5
-b.class
 c = "Coucou"
-c.class
