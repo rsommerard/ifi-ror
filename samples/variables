@@ -1,4 +1,8 @@
 a = "Bonjour"
-b = 10.1
-c = "Coucou"
+a.class
 a = 2
+a.class
+b = 10.1
+b.class
+c = "Coucou"
+c.class
