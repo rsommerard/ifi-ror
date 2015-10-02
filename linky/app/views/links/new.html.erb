@@ -1,30 +1,27 @@
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="form-wrap">
-          <%= form_for @link do |f| %>
-            <% if @link.errors.any? %>
-            <p><%= pluralize(@link.errors.count, "errror") %>prohibited this link from being saved:<ul>
-                <% @link.errors.full_messages.each do |msg| %>
-                  <li><%= msg %></li>
-                  <% end %>
-              </ul>
-            </p>
-          <% end %>
-            <div class="form-group">
-              <%= f.label :title, 'Title:', class: 'sr-only' %>
-              <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
-            </div>
-            <div class="form-group">
-              <%= f.label :url, 'URL:', class: 'sr-only' %>
-              <%= f.text_field :url, class: 'form-control', placeholder: 'URL' %>
-            </div>
-            <%= f.submit "Save", id: 'btn-save', class: 'btn btn-default btn-block' %>
-            <%= link_to 'Back', links_path, class: 'btn btn-default btn-block' %>
-          <% end %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-wrap">
+      <%= form_for @link do |f| %>
+        <% if @link.errors.any? %>
+          <p><%= pluralize(@link.errors.count, "errror") %> prohibited this link from being saved:
+            <ul>
+              <% @link.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </p>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :title, 'Title:', class: 'sr-only' %>
+          <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
         </div>
-      </div>
+        <div class="form-group">
+          <%= f.label :url, 'URL:', class: 'sr-only' %>
+          <%= f.text_field :url, class: 'form-control', placeholder: 'URL' %>
+        </div>
+        <%= f.submit "Save", id: 'btn-save', class: 'btn btn-default' %>
+        <%= link_to 'Back', links_path, class: 'btn btn-default' %>
+      <% end %>
     </div>
   </div>
-</section>
+</div>

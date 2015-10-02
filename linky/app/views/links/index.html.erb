@@ -1,34 +1,49 @@
-<div class="row">
-  <div id="content" class="col-md-12">
-    <%= link_to 'Add a link', new_link_path, class: 'btn btn-default' %>
+<div class="row row-header">
+  <div class="col-md-12">
     <% if flash[:notice] %>
-    <p id="notice"><%= flash[:notice] %></p>
+      <p><%= flash[:notice] %></p>
     <% end %>
-    <% @links.each do |link| %>
-    <div class="row">
-      <div class="col-md-offset-2 col-md-8 element">
-        <div class="col-md-1">
-          <div class="row">
-            <%= link_to '', increment_link_path(link), class: 'glyphicon glyphicon-triangle-top triangle-icon' %>
-          </div>
-          <div class="row">
-            <span class="score"><%= link.score %></span>
-          </div>
-          <div class="row">
-            <%= link_to '', decrement_link_path(link), class: 'glyphicon glyphicon-triangle-bottom triangle-icon' %>
-          </div>
-        </div>
-        <div class="col-md-10 text-left">
-          <h3><%= truncate link.title %><h3>
-          </div>
-          <div class="col-md-1 actions">
-            <%= link_to 'Edit', edit_link_path(link), class: "btn btn-default" %>
-            <%= link_to 'Delete', delete_link_path(link), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
-            <%= link_to 'Go', link.url, class: "btn btn-default" %>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
+    <%= link_to 'Add a link', new_link_path, class: 'btn btn-default' %>
   </div>
 </div>
+<% @links.each do |link| %>
+  <div class="row bordered">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-1">
+          <%= link_to '', increment_link_path(link), class: 'glyphicon glyphicon-triangle-top' %>
+        </div>
+        <div class="col-md-9">
+          <!-- empty -->
+        </div>
+        <div class="col-md-2">
+          <!-- empty -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-1">
+          <span><b><%= link.score %></b></span>
+        </div>
+        <div class="col-md-9 text-left">
+          <span><b><%= truncate link.title %></b><span>
+        </div>
+        <div class="col-md-2">
+          <!-- empty -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-1">
+          <%= link_to '', decrement_link_path(link), class: 'glyphicon glyphicon-triangle-bottom' %>
+        </div>
+        <div class="col-md-9">
+          <!-- empty -->
+        </div>
+        <div class="col-md-2 text-right">
+          <%= link_to '', edit_link_path(link), class: "glyphicon glyphicon-edit " %>
+          <%= link_to '', delete_link_path(link), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash trash-icon" %>
+          <%= link_to '', link.url, class: "glyphicon glyphicon-play go-icon" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
