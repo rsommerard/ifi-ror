@@ -9,3 +9,8 @@ two:
   title: MyString
   url: MyString
   score: 1
+
+third:
+  title: Third
+  url: www.yahoo.fr
+  score: 5
