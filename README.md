@@ -17,9 +17,17 @@ Ruby on Rails application for IFI course.
   - `rvm install 2.2`
   - `rvm use 2.2 --default`
 
+# Installation de NodeJS
+
+  - `cd`
+  - `sudo apt-get install nodejs npm`
+  - `sudo ln -s /usr/bin/nodejs /usr/bin/node`
+
 # Installation de Rails
 
   - `gem install rails --no-ri --no-rdoc`
+  - `sudo apt-get install ruby-railties`
+  - `sudo apt-get install bundler`
 
 # Commandes utiles
 
