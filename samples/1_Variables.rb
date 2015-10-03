@@ -6,3 +6,4 @@ b = 10.1
 b.class
 c = "Coucou"
 c.class
+
