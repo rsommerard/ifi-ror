@@ -33,3 +33,7 @@ p.getAge
 p.getNom
 p.getPrenom()
 
+p.respond_to?("age")
+p.respond_to?("setAge")
+p.respond_to?("setPrenom")
+
