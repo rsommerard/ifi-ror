@@ -1,0 +1,32 @@
+def maFonction
+  yield
+end
+
+maFonction do
+  puts "Salut"
+end
+
+maFonction do
+  puts "Salut"
+  puts "Comment ça va ?"
+end
+
+def uneAutreFonction
+  yield
+  puts "C'est super"
+  yield
+end
+
+uneAutreFonction do
+  puts "Vive le yield"
+end
+
+def fonctionComplexe
+  yield("Amélie","22ans")
+  yield("Julie","23ans")
+  yield("Anne-Sophie","50ans")
+end
+
+fonctionComplexe do |prenom,age|
+  puts "Je vous présente " + prenom + " et elle a " + age
+end
