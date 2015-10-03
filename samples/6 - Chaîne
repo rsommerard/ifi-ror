@@ -1,5 +1,7 @@
-s = "Bonjour\n"
-
+s = "lucie\n"
+s.capitalize
+s
+s = s.capitalize
 s
 puts s
 
@@ -8,29 +10,22 @@ s
 s = s.chomp
 s
 
-s = "Bonjour\n"
-s
-!s.chomp
-s
-
-s = "lucie"
-!s.capitalize
-
 s = "SalUt"
-!s.reverse()
+s = s.swapcase
+s = s.reverse()
 
 s = "a"
-!a.next
-!a.next
-!a.next
-!a.next
+s = s.next
+s = s.next
+s = s.next
+s = s.next
 
 s = "SALUT, TU VAS BIEN ?"
-!s.downcase
+s = s.downcase
+
 s = "salut, tu vas bien ?"
-!s.upcase
+s = s.upcase
 
-!s.length
+a = s.length
 
-s = "Salut" * 3
-s
+s = s * 3
