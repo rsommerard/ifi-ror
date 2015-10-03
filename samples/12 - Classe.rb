@@ -38,6 +38,7 @@ p.respond_to?("setAge")
 p.respond_to?("setPrenom")
 
 tab = [Personne.new("Tom","Dupont",30),Personne.new("Léa","David",12),Personne.new("Léa","Dupont",26),Personne.new("Amélie","David",60)] 
+
 tab.sort do |a,b|
   if a.getNom == b.getNom
     if a.getPrenom == b.getPrenom
@@ -51,5 +52,16 @@ tab.sort do |a,b|
     -1
   else
     1
+  end
+end
+
+tab.sort do |a,b|
+  if a.getAge == b.getAge
+    0
+  elsif
+    a.getAge < b.getAge
+      -1
+  else
+      1
   end
 end
