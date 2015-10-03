@@ -7,6 +7,9 @@ end
 s = "Amélie Julie Sophie Béatrice"
 tab = s.split(" ")
 
+tab = tab.sort
+tab
+
 tab[1]
 tab[2]
 
