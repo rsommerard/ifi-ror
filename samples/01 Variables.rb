@@ -8,3 +8,5 @@ c = "Coucou"
 c.class
 A = "Toto"
 A = 10
+Chaine = "Titi"
+Chaine = 20
