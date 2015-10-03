@@ -6,4 +6,5 @@ b = 10.1
 b.class
 c = "Coucou"
 c.class
-
+Variable = "Toto"
+Variable = 10
