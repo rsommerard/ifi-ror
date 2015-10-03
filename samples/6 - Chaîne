@@ -1,0 +1,36 @@
+s = "Bonjour\n"
+
+s
+puts s
+
+s.chomp
+s
+s = s.chomp
+s
+
+s = "Bonjour\n"
+s
+!s.chomp
+s
+
+s = "lucie"
+!s.capitalize
+
+s = "SalUt"
+!s.reverse()
+
+s = "a"
+!a.next
+!a.next
+!a.next
+!a.next
+
+s = "SALUT, TU VAS BIEN ?"
+!s.downcase
+s = "salut, tu vas bien ?"
+!s.upcase
+
+!s.length
+
+s = "Salut" * 3
+s
