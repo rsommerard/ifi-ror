@@ -22,11 +22,11 @@ uneAutreFonction do
 end
 
 def fonctionComplexe
-  yield("Amélie","22ans")
-  yield("Julie","23ans")
-  yield("Anne-Sophie","50ans")
+  yield("Amélie","elle","22ans")
+  yield("Julie","elle","23ans")
+  yield("Anne-Sophie","elle","50ans")
 end
 
-fonctionComplexe do |prenom,age|
-  puts "Je vous présente " + prenom + " et elle a " + age
+fonctionComplexe do |prenom,pronom,age|
+  puts "Je vous présente " + prenom + " et " + pronom + " a " + age
 end
