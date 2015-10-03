@@ -9,6 +9,7 @@ tab = s.split(" ")
 
 tab = tab.sort
 tab
+tab.class
 
 tab[1]
 tab[2]
