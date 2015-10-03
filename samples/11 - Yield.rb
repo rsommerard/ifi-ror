@@ -21,12 +21,13 @@ uneAutreFonction do
   puts "Vive le yield"
 end
 
-def fonctionComplexe
+def fonctionComplexe(fin)
   yield("Amélie","elle","22ans")
   yield("Julie","elle","23ans")
   yield("Anne-Sophie","elle","50ans")
+  puts fin
 end
 
-fonctionComplexe do |prenom,pronom,age|
+fonctionComplexe("C'est fini") do |prenom,pronom,age|
   puts "Je vous présente " + prenom + " et " + pronom + " a " + age
 end
