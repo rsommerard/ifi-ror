@@ -5,7 +5,7 @@ class LinksController < ApplicationController
   # GET /links.json
   def index
     @links = Link.all.order('score DESC')
-    flash.notice = 'No links to share.' if @links.empty?
+    flash.notice = 'INFO#No links to share' if @links.empty?
   end
 
   # GET /links/1
@@ -26,7 +26,7 @@ class LinksController < ApplicationController
   def increment
     @link.score += 1
 
-    flash.notice = 'An error has occured.' unless @link.save
+    flash.notice = 'ERROR#An error has occured' unless @link.save
     redirect_to links_url
   end
 
@@ -34,7 +34,7 @@ class LinksController < ApplicationController
   def decrement
     @link.score -= 1 if @link.score > 0
 
-    flash.notice = 'An error has occured.' unless @link.save
+    flash.notice = 'ERROR#An error has occured' unless @link.save
     redirect_to links_url
   end
 
@@ -44,10 +44,9 @@ class LinksController < ApplicationController
     @link = Link.new(link_params)
 
     if @link.save
-      flash.notice = 'Link was successfully created.'
+      flash.notice = 'SUCCESS#Link was successfully created'
       redirect_to links_url
     else
-      flash.notice = 'An error has occured.'
       render :new
     end
   end
@@ -56,10 +55,9 @@ class LinksController < ApplicationController
   # PATCH/PUT /links/1.json
   def update
     if @link.update(link_params)
-      flash.notice = 'Link was successfully updated.'
+      flash.notice = 'SUCCESS#Link was successfully updated'
       redirect_to links_url
     else
-      flash.notice = 'An error has occured.'
       render :edit
     end
   end
@@ -69,7 +67,7 @@ class LinksController < ApplicationController
   def destroy
     @link.destroy
 
-    flash.notice = 'Link was successfully destroyed.'
+    flash.notice = 'SUCCESS#Link was successfully destroyed'
     redirect_to links_url
   end
 
