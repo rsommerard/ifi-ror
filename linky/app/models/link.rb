@@ -1,4 +1,6 @@
 class Link < ActiveRecord::Base
+  has_one :user
+
   validates  :title, :url, :score, presence: true
   validates :score, numericality: {
   	greater_than_or_equal_to: 0,

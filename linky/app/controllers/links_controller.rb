@@ -1,6 +1,8 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy, :increment, :decrement]
 
+  before_action :authorize, only: [:new, :edit, :increment, :decrement, :destroy]
+
   # GET /links
   # GET /links.json
   def index
@@ -24,24 +26,38 @@ class LinksController < ApplicationController
 
   # GET /links/1/increment
   def increment
-    @link.score += 1
+    vote = Vote.new(user_id: session[:user_id], link_id: @link.id)
 
-    flash.notice = 'ERROR#An error has occured' unless @link.save
-    redirect_to links_url
+    if vote.save
+      @link.score += 1
+
+      flash.notice = 'ERROR#An error has occured' unless @link.save
+      redirect_to links_url
+    else
+      flash.notice = 'INFO#You have already voted'
+      redirect_to links_url
+    end
   end
 
   # GET /links/1/decrement
   def decrement
-    @link.score -= 1 if @link.score > 0
+    vote = Vote.new(user_id: session[:user_id], link_id: @link.id)
 
-    flash.notice = 'ERROR#An error has occured' unless @link.save
-    redirect_to links_url
+    if vote.save
+      @link.score -= 1 if @link.score > 0
+
+      flash.notice = 'ERROR#An error has occured' unless @link.save
+      redirect_to links_url
+    else
+      flash.notice = 'INFO#You have already voted'
+      redirect_to links_url
+    end
   end
 
   # POST /links
   # POST /links.json
   def create
-    @link = Link.new(link_params)
+    @link = Link.new(title: link_params[:title], url: link_params[:url], user_id: session[:user_id])
 
     if @link.save
       flash.notice = 'SUCCESS#Link was successfully created'

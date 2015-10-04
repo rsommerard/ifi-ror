@@ -7,7 +7,7 @@ module LinksHelper
     notice = tmp[1]
 
     return ALERT.gsub(/TYPE/, "success").gsub(/NOTICE/, notice) if prefix.eql? 'SUCCESS'
-    return ALERT.gsub(/TYPE/, "error").gsub(/NOTICE/, notice) if prefix.eql? 'ERROR'
+    return ALERT.gsub(/TYPE/, "danger").gsub(/NOTICE/, notice) if prefix.eql? 'ERROR'
     return ALERT.gsub(/TYPE/, "info").gsub(/NOTICE/, notice) if prefix.eql? 'INFO'
   end
 end
