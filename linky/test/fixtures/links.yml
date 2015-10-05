@@ -1,16 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-good:
+google:
   title: Google
-  url: http://www.google.fr
+  url: http://www.google.fr/
   score: 0
 
-two:
-  title: MyString
-  url: MyString
-  score: 1
+without:
+  title: Without
+  url: www.without.fr
+  score: 0
 
-third:
-  title: Third
-  url: www.yahoo.fr
-  score: 5
+wikipedia:
+  title: Wikipedia
+  url: https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal/
+  score: 0

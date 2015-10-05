@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class LinkTest < ActiveSupport::TestCase
+  fixtures :links
 
   test "link attributes must not be empty" do
     link = Link.new
@@ -9,31 +10,28 @@ class LinkTest < ActiveSupport::TestCase
     assert link.errors[:url].any?
   end
 
-  test "link validated" do
-	  link = Link.new(title: 'Link_title',url: 'http://www.google.fr')
-    assert link.valid?
+  test "google link must be valid" do
+    assert links(:google).valid?
+  end
 
-    link = Link.new(title: 'Link_title',url: 'https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal')
-    assert link.valid?
+  test "link without http must be invalid" do
+    assert links(:without).invalid?
+    assert links(:without).errors[:url].any?
+  end
+
+  test "wikipedia link must be valid" do
+    assert links(:wikipedia).valid?
   end
 
   test "score must be greater than 0" do
-    link = Link.new(title: 'Link_title', url: 'http://www.google.fr', score: -1)
-    assert link.invalid?
-    assert link.errors[:score].any?
-    puts link.errors[:score]
+    links(:without).score = -1
+    assert links(:without).invalid?
+    assert links(:without).errors[:score].any?
   end
 
-  test "error with url format" do
-    link = Link.new(title: 'Link_title', url: 'google')
-    assert link.invalid?
-    assert link.errors[:url].any?
-    puts link.errors[:url]
-  end
-
-  test "score initialized to 0" do
-    link = Link.new(title: 'Link_title', url: 'http://www.google.fr')
-    assert_equal(0 , link[:score], 'the score equals to 0')
+  test "score must be initialized to 0" do
+    link = Link.new(title: 'LinkTest', url: 'http://www.link.test')
+    assert_equal 0, link[:score]
   end
 
 end
