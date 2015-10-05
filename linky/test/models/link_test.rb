@@ -30,8 +30,14 @@ class LinkTest < ActiveSupport::TestCase
   end
 
   test "score must be initialized to 0" do
-    link = Link.new(title: 'LinkTest', url: 'http://www.link.test')
+    link = Link.new(title: 'LinkTest', url: 'http://www.link.test', user_id: 1)
     assert_equal 0, link[:score]
+  end
+
+  test "user_id must be present" do
+    link = Link.new(title: 'LinkTest', url: 'http://www.link.test')
+    assert link.invalid?
+    assert link.errors[:user_id].any?
   end
 
 end

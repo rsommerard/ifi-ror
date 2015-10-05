@@ -4,13 +4,22 @@ google:
   title: Google
   url: http://www.google.fr/
   score: 0
+  user_id: 1
+
+facebook:
+  title: Facebook
+  url: http://www.facebook.com/
+  score: 0
+  user_id: 1
 
 without:
   title: Without
   url: www.without.fr
   score: 0
+  user_id: 1
 
 wikipedia:
   title: Wikipedia
   url: https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal/
   score: 0
+  user_id: 1

@@ -2,12 +2,8 @@ require 'test_helper'
 
 class LinksControllerTest < ActionController::TestCase
   setup do
-    @link = links(:good)
-    @update = {
-      title: 'Facebook',
-      url: 'http://www.facebook.com',
-      score: 123
-    }
+    @link = links(:google)
+    @update = {title: @link.title, url: 'http://www.google.com/'}
   end
 
   test "should get index" do
@@ -23,7 +19,8 @@ class LinksControllerTest < ActionController::TestCase
 
   test "should create link" do
     assert_difference('Link.count') do
-      post :create, link: @update
+      session[:user_id] = 1
+      post :create, link: {link: nil, title: 'TestLink', url: 'http://test.link/'}
     end
 
     assert_redirected_to links_path
