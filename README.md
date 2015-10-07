@@ -17,7 +17,7 @@ Ruby on Rails application for IFI course.
   - `rvm install 2.2`
   - `rvm use 2.2 --default`
 
-# Installation de NodeJS
+# Installation de NodeJS (facultatif)
 
   - `cd`
   - `sudo apt-get install nodejs npm`
@@ -33,15 +33,18 @@ Ruby on Rails application for IFI course.
 
   - `rails new app`
   - `rails server`
-  - `rails generate controller welcome index`
+  - `rails generate controller welcome index / rails destroy controller welcome`
   - `rake routes`
-  - `rake db:migrate`
+  - `rake db:migrate / rake db: reset / rake db:drop`
   - `rake test`
+  - `rake stats`
 
-# Partie 1: Récupérer les ressources
+# Partie 0: Les commandes Rails
 
-  - `git clone http://github.com/rsommerard/ifi-ror.git`
-  - `cd ifi-ror/linky`
-  - `rails server
-  - `rails generate scaffold Link title:string url:string score:integer`
-  - `rake db:migrate`
+# Partie 1: Créer le projet et lancer le serveur
+
+# Partie 2: Créer les Liens
+
+# Partie 3: Ajouter la notion de score pour les liens
+
+# Partie 4: Ajouter des comptes utilisateurs pour ne voter qu'une fois et gérer les liens

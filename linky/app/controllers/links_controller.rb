@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: [:show, :edit, :update, :destroy, :increment, :decrement]
+  before_action :set_link, only: [:edit, :update, :destroy, :increase, :decrease]
 
   before_action :authorize, only: [:new, :edit, :increment, :decrement, :destroy]
 
@@ -8,11 +8,6 @@ class LinksController < ApplicationController
   def index
     @links = Link.all.order('score DESC')
     flash.notice = 'INFO#No links to share' if @links.empty?
-  end
-
-  # GET /links/1
-  # GET /links/1.json
-  def show
   end
 
   # GET /links/new
@@ -24,8 +19,8 @@ class LinksController < ApplicationController
   def edit
   end
 
-  # GET /links/1/increment
-  def increment
+  # GET /links/1/increase
+  def increase
     vote = Vote.new(user_id: session[:user_id], link_id: @link.id)
 
     if vote.save
@@ -39,8 +34,8 @@ class LinksController < ApplicationController
     end
   end
 
-  # GET /links/1/decrement
-  def decrement
+  # GET /links/1/decrease
+  def decrease
     vote = Vote.new(user_id: session[:user_id], link_id: @link.id)
 
     if vote.save

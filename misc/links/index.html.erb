@@ -9,17 +9,14 @@
     </div>
     <div class="row">
       <div class="col-md-offset-4 col-md-4">
-        <% if session[:user_id] %>
-          <%= link_to 'Add a link', new_link_path, class: 'btn btn-primary' %>
-        <% end %>
+        <!--
+          Partie 2, Partie 4
+        -->
       </div>
       <div class="col-md-4 text-right">
-        <% unless session[:user_id] %>
-          <%= link_to 'Sign up', signup_path, class: 'btn btn-primary' %>
-          <%= link_to 'Sign in', signin_path, class: 'btn btn-default' %>
-        <% else %>
-          <%= link_to 'Sign out', signout_path, method: :delete, class: 'btn btn-default' %>
-        <% end %>
+        <!--
+          Partie 4
+        -->
       </div>
     </div>
   </div>
@@ -29,7 +26,9 @@
     <div class="col-md-12">
       <div class="row">
         <div class="col-md-1">
-          <%= link_to '', increase_link_path(link), class: 'glyphicon glyphicon-triangle-top triangle-icon' %>
+          <!--
+            Partie 3
+          -->
         </div>
         <div class="col-md-9">
           <!-- empty -->
@@ -40,10 +39,18 @@
       </div>
       <div class="row">
         <div class="col-md-1 score">
-          <span><b><%= link.score %></b></span>
+          <span><b>
+            <!--
+              Partie 3
+            -->
+          </b></span>
         </div>
         <div class="col-md-9 text-left">
-          <span><b><%= link_to truncate(link.title, length: 80), link.url, class: 'url' %></b><span>
+          <span><b>
+            <!--
+              Partie 2
+            -->
+          </b><span>
         </div>
         <div class="col-md-2">
           <!-- empty -->
@@ -51,16 +58,17 @@
       </div>
       <div class="row">
         <div class="col-md-1">
-          <%= link_to '', decrease_link_path(link), class: 'glyphicon glyphicon-triangle-bottom triangle-icon' %>
+          <!--
+            Partie 3
+          -->
         </div>
         <div class="col-md-9">
           <!-- empty -->
         </div>
         <div class="col-md-2 text-right">
-          <% if session[:user_id] == link.user_id %>
-            <%= link_to '', edit_link_path(link), class: 'glyphicon glyphicon-edit edit-icon' %>
-            <%= link_to '', delete_link_path(link), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash trash-icon" %>
-          <% end %>
+          <!--
+            Partie 4
+          -->
           <%= link_to '', link.url, class: 'glyphicon glyphicon-play go-icon' %>
         </div>
       </div>

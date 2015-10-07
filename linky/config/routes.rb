@@ -13,8 +13,8 @@ Rails.application.routes.draw do
 
   delete '/links/:id', to: 'links#destroy', as: 'delete_link'
 
-  get '/links/:id/increment', to: 'links#increment', as: 'increment_link'
-  get '/links/:id/decrement', to: 'links#decrement', as: 'decrement_link'
+  get '/links/:id/increase', to: 'links#increase', as: 'increase_link'
+  get '/links/:id/decrease', to: 'links#decrease', as: 'decrease_link'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
