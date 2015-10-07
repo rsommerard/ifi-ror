@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:edit, :update, :destroy, :increase, :decrease]
 
-  before_action :authorize, only: [:new, :edit, :increment, :decrement, :destroy]
+  before_action :authorize, only: [:new, :edit, :increase, :decrease, :destroy]
 
   # GET /links
   # GET /links.json
