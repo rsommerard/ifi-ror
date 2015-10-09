@@ -12,7 +12,7 @@ Partie 1:
 
 Partie 2:
   - ajouter la gem: gem 'bootstrap-sass', '~> 3.3.2'
-  - buundle install
+  - bundle install
   - rails generate scaffold Link title:string url:string
   - supprimer app/assets/stylesheets/application.css
   - ajouter le fichier application.sass dans app/assets/stylesheets/
@@ -21,7 +21,10 @@ Partie 2:
   - ajouter les fichiers du dossier links dans app/views/links/
   - ajouter le fichier links_helper.rb dans le dossier app/helpers/
   - créer un formulaire pour l'ajout et l'édition d'un lien
-  - modifier le controlleur (ne pas oublier les routes)
+  - ajouter dans l'index, pour chaque lien : un bouton pour l'édition, la suppression et l'accès au site
+  - modifier le controlleur pour récupérer le titre et l'url (ne pas oublier les routes) 
+  - faire en sorte d'avoir une redirection vers index après la création et l'édition d'un lien
+  - ajouter les contraintes de validité des champs dans le modèle
   - rake db:migrate
   - http://localhost:3000/links
   - implémenter des tests
