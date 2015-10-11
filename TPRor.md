@@ -34,7 +34,9 @@ Partie 3:
   - migration valeur par default
   - tests du model
   - ajouter increase, decrease au controlleur
+  - ajouter les 2 routes correspondantes
   - ajouter les boutons dans la vue
+  - ne pas oublier d'ajouter increase et decrease dans le before_action
 
 Partie 4:
   - rails generate controller Signin
