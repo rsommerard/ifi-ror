@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  titre: MyString
-  url: MyString
+google:
+  title: Google
+  url: http://www.google.fr/
 
-two:
-  titre: MyString
-  url: MyString
+facebook:
+  title: Facebook
+  url: http://www.facebook.com/
+
+without:
+  title: Without
+  url: www.without.fr
+
+wikipedia:
+  title: Wikipedia
+  url: https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal/

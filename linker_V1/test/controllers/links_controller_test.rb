@@ -2,7 +2,8 @@ require 'test_helper'
 
 class LinksControllerTest < ActionController::TestCase
   setup do
-    @link = links(:one)
+    @link = links(:google)
+    @update = {title: @link.title, url: 'http://www.google.com/'}
   end
 
   test "should get index" do
@@ -18,15 +19,11 @@ class LinksControllerTest < ActionController::TestCase
 
   test "should create link" do
     assert_difference('Link.count') do
-      post :create, link: { titre: @link.titre, url: @link.url }
+      session[:user_id] = 1
+      post :create, link: {link: nil, title: 'TestLink', url: 'http://test.link/'}
     end
 
-    assert_redirected_to link_path(assigns(:link))
-  end
-
-  test "should show link" do
-    get :show, id: @link
-    assert_response :success
+    assert_redirected_to links_path
   end
 
   test "should get edit" do
@@ -35,8 +32,8 @@ class LinksControllerTest < ActionController::TestCase
   end
 
   test "should update link" do
-    patch :update, id: @link, link: { titre: @link.titre, url: @link.url }
-    assert_redirected_to link_path(assigns(:link))
+    patch :update, id: @link, link: @update
+    assert_redirected_to links_path
   end
 
   test "should destroy link" do
