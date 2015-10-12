@@ -8,30 +8,9 @@ Ruby on Rails application for IFI course.
   - http://api.rubyonrails.org/
   - http://guides.rubyonrails.org/
 
-# Installation de Ruby avec RVM
-
-  - `rvm cleanup all`
-  - `Exécuter "install_ruby.sh"`
-  - `env http_proxy=http://cache-etu.univ-lille1.fr:3128 gem install bundler`
-
-  - `cd`
-  - `gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3`
-  - `curl -sSL https://get.rvm.io | bash -s stable`
-  - `source .rvm/scripts/rvm`
-  - `rvm install 2.2`
-  - `rvm use 2.2 --default`
-
-# Installation de NodeJS (facultatif)
-
-  - `cd`
-  - `sudo apt-get install nodejs npm`
-  - `sudo ln -s /usr/bin/nodejs /usr/bin/node`
-
-# Installation de Rails
-
-  - `gem install rails --no-ri --no-rdoc`
-  - `sudo apt-get install ruby-railties`
-  - `sudo apt-get install bundler`
+# Installation de Ruby / RoR avec RVM
+  
+  - ./install/install_rails.sh
 
 # Commandes utiles
 
