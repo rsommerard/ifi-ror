@@ -10,6 +10,10 @@ Ruby on Rails application for IFI course.
 
 # Installation de Ruby avec RVM
 
+  - `rvm cleanup all`
+  - `Exécuter "install_ruby.sh"`
+  - `env http_proxy=http://cache-etu.univ-lille1.fr:3128 gem install bundler`
+
   - `cd`
   - `gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3`
   - `curl -sSL https://get.rvm.io | bash -s stable`
