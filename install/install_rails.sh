@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ./ybur.sh
+source ~/.bashrc
 rvm use ruby-2.2.3 --default
 gem install hoe-3.14.2.gem
 gem install minitest-5.8.1.gem
